@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Proyect.create name: "Seed Created 1", description "Seed created description1"
+
+Proyect.create name: "Seed Created 2", description "Seed created description2"
+
+Proyect.create name: "Seed Created 3", description "Seed created description3"
