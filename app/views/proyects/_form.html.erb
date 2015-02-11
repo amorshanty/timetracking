@@ -1,0 +1,13 @@
+<%= form_for @proyect, :html => { :multipart => true } do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+	<br>
+	<%= f.label :logo %>
+	<%= f.file_field :logo %>
+
+	<%= f.submit 'Save' %>
+
+<% end %>

@@ -1,0 +1,29 @@
+<h1>Hello</h1>
+<h3>
+	<%= @proyect.name %>
+</h3>
+<ul>
+	<% @entries.each do |entry| %>
+		<li>
+
+			Hours: <%= entry.hours %>
+			<br>
+			Minutes: <%= entry.minutes %>
+			<br>
+			<%= link_to("Editar", edit_proyect_entry_path(@proyect.id, entry.id), class: 'thing') %>
+
+			<%= link_to('Delete',
+				proyect_entry_path(@proyect, entry),
+				method: :delete, confirm: 'Are you sure?') %>
+		</li>
+	<% end -%>
+</ul>
+	<%= image_tag @proyect.logo.url(:medium) %>
+<br>
+<h3>
+	<%= @time_string %> 
+</h3>
+
+
+<%= link_to("Volver", proyects_path) %>
+<%= link_to("Agregar horas", new_proyect_entry_path) %>

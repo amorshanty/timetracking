@@ -1,0 +1,34 @@
+<p> ola ke ace, ruby on rails o ke ace? </p>
+
+
+
+<ul>
+	<% @proyects.each do |proyect| %>
+
+		<li>
+		<%= image_tag proyect.logo.url(:medium) %>
+		<br>
+
+		<%= link_to(proyect.name, proyect_entries_path(proyect)) %>
+
+		<%= link_to('Delete', proyect_path(proyect.id),
+			method: :delete, confirm: 'Are you sure?') %>
+
+			<%= link_to("Editar", edit_proyect_path(proyect)) %>
+
+			<% if proyect.description.present? %>
+			- <%= proyect.description %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
+
+
+<%= link_to("volver", '/') %>
+<%= link_to("Agregar", new_proyect_path) %>
+
+
+
+
+
+
